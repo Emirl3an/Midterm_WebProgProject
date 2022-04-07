@@ -1,4 +1,10 @@
 ## Mystery Library
+Mystery Library - be like at home.
+### About
+Mystery Library is a classic site, where everyone who likes books or reading can use Mystery Library for saving their books, which they would like or planning to read. Comfortable design and understandable interface is a big advantage!
+
+
+
 
 [link to website](https://cs206database.herokuapp.com/home)
 

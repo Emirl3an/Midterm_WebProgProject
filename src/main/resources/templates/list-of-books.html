@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>List of books</title>
+</head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-3">
+            <div class="container-fluid py-3">
+                <img src="https://o.remove.bg/downloads/3822d0c3-76ff-4a05-9132-823140b8ac7f/image-removebg-preview.png" width="80" alt="">
+                <a class="navbar-brand" href="/home">
+                    <strong> Mystery Library</strong>
+                </a>
+                <div class="navbar-collapse collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" id="activeItem" href="/home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-5" href="/books">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/books-add">Add</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-5" href="/about">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <header class="text-center">
+                <div class="row pb-5 mb-4 mt-5">
+                    <div th:each="item:${books}" class="col-lg-4 col-md-4 mb-3 mb-lg-0">
+                        <div class="card rounded shadow shadow-sm mb-4">
+                            <div class="card-body p-3">
+                                <img src="https://us.123rf.com/450wm/sergeypykhonin/sergeypykhonin1809/sergeypykhonin180900041/108230283-registrierung-logo-oder-label-registrieren-tagebuch-notizsymbol-vektorillustration.jpg" alt="film-icon" width="200" height="200">
+
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <p class="text-muted font-italic mb-0">Name:</p>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <p th:text="${item.name}" class="text-muted font-italic mb-0"></p>
+                                    </li>
+                                </ul>
+
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <p class="text-muted font-italic mb-0 pt-2">Genre:</p>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <p th:text="${item.genre}" class="text-muted font-italic mb-0"></p>
+                                    </li>
+                                </ul>
+
+                                <ul class="list-inline small mt-3">
+                                    <li class="list-inline-item">
+                                        <a th:href="'/books/' + ${item.id}" class="btn btn-success btn-sm btn-block">More</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a th:href="'/books/' + ${item.id} + '/edit'" class="btn btn-info btn-sm btn-block">Edit</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <form th:action="'/books/' + ${item.id} + '/delete'" method="post">
+                                            <button type="submit" class="btn btn-danger btn-sm btn-block">Delete</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Book description</title>
+    </head>
+    <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-3">
+        <div class="container-fluid py-3">
+            <img src="https://o.remove.bg/downloads/3822d0c3-76ff-4a05-9132-823140b8ac7f/image-removebg-preview.png" width="80" alt="">
+            <a class="navbar-brand" href="/home">
+                <strong> Mystery Library</strong>
+            </a>
+            <div class="navbar-collapse collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" id="activeItem" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-5" href="/books">Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/books-add">Add</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-5" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid bd-highlight mb-3">
+        <div class="container d-flex flex-row">
+            <div class="p-2 ">
+                <img src="https://i.pinimg.com/564x/25/e9/2c/25e92cba3f7eec30c1d83304105bf51b.jpg" alt="Image" width="500" height="500">
+            </div>
+            <div th:each="item:${book}" class="p-2 ml-3">
+                <h1 th:text="${item.name}" class="mb-3 display-3"></h1>
+                <h3 th:text="${item.genre}"></h3>
+                <p th:text="${item.description}"></p>
+                <a th:href="${item.url}" class="btn btn-outline-success">Read</a>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

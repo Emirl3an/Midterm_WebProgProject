@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Main page</title>
+</head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-3">
+        <div class="container-fluid py-3">
+            <img src="https://o.remove.bg/downloads/3822d0c3-76ff-4a05-9132-823140b8ac7f/image-removebg-preview.png" width="80" alt="">
+            <a class="navbar-brand" href="/home">
+                <strong> Mystery Library</strong>
+            </a>
+            <div class="navbar-collapse collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" id="activeItem" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-5" href="/books">Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/books-add">Add</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-5" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <div class="container-fluid bd-highlight mb-3">
+            <div class="container d-flex flex-row">
+                <div class="col-lg-5 p-2 bd-highlight">
+                    <h1 class="mb-3 display-3">Books</h1>
+                    <p>Mystery Library - be like at home.</p>
+                    <a class="col-4 btn btn-outline-success btn-block" href="/books">Books</a>
+                </div>
+                <div class="col-lg-4 p-2 bd-highlight">
+                    <img src="https://media.istockphoto.com/photos/modern-bookshelf-or-library-with-books-on-white-background-picture-id953910510?k=20&m=953910510&s=170667a&w=0&h=fKOpvUrWiI0dt_tF-gyjLIWEC64E-r0CRM-PPsrNb0k=" alt="Image" width="700" height="500">
+                </div>
+            </div>
+        </div>
+
+<!--        <div class="container py-lg-3 mt-lg-5 d-flex shadow shadow-sm">-->
+<!--            <div class="col-lg-6 p-lg-4">-->
+<!--                <h1 class="display-4 ">-->
+<!--                    <strong>Info headline</strong>-->
+<!--                </h1>-->
+<!--                <p class="lead my-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>-->
+<!--                <a class="btn btn-outline-warning" th:href="@{about}">Read more</a>-->
+<!--            </div>-->
+<!--            <div class="col-lg-6 float-lg-right">-->
+<!--                <img src="https://i.pinimg.com/564x/9e/92/87/9e92871b9a62f38edca97aa51e9b846a.jpg" width="280" alt="logo">-->
+<!--            </div>-->
+<!--        </div>-->
+    </body>
+</html>

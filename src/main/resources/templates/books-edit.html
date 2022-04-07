@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Edit book</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-3">
+            <div class="container-fluid py-3">
+                <img src="https://o.remove.bg/downloads/3822d0c3-76ff-4a05-9132-823140b8ac7f/image-removebg-preview.png" width="80" alt="">
+                <a class="navbar-brand" href="/home">
+                    <strong> Mystery Library</strong>
+                </a>
+                <div class="navbar-collapse collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" id="activeItem" href="/home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-5" href="/books">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/books-add">Add</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-5" href="/about">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container mt-5">
+            <h1 class="display-5 font-italic">Edit book</h1>
+            <div th:each="item:${book}">
+                <form method="post">
+                    <label>
+                        <input type="text" th:value="${item.name}" name="name" placeholder="book name" class="form-control mt-3">
+                    </label>
+                    <label>
+                        <input type="text" th:value="${item.genre}" name="genre" placeholder="book genre" class="form-control">
+                    </label>
+                    <label>
+                        <input type="url" th:value="${item.url}"  name="url" placeholder="book url" class="form-control">
+                    </label>
+                    <labe>
+                        <textarea name="description" th:text="${item.description}" placeholder="description" rows="5" class="col-7 form-control mb-2"></textarea>
+                    </labe>
+                    <button type="submit" class="btn btn-success">Update</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
